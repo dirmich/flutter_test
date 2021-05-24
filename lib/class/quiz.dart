@@ -2,6 +2,19 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+class Quizs {
+  late final String lang;
+  late final Quiz quiz;
+
+  Quizs({
+    required this.lang,
+    required this.quiz,
+  });
+
+  factory Quizs.fromJson(Map<String, dynamic> json) =>
+      Quizs.fromMap(json.decode(source));
+}
+
 class Quiz {
   final String quiz;
   final String left;
